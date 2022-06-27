@@ -1,0 +1,74 @@
+@media all and (max-width:767px) {
+     #um{
+        margin: 20px 20px 20px 20px;
+        width: 300px;
+    }
+    .time{
+        width: 400px;
+        height: 520px;
+        border: none;
+        text-align: center;
+
+    }
+    .lol{
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+footer {
+    width: 1080px;
+    height: 310px;
+    margin: auto;
+    display: flex;
+    flex-direction: column; /* 요소들을 수평정렬 */
+    font-size: 12px;
+    float: right;
+  }
+
+.header{
+    text-align: center;
+}
+
+.line{
+    height : 5px;
+    background-color : rgb(27, 118, 255);
+}
+
+.time{
+    width: 400px;
+    height: 520px;
+    border: none;
+    float : left;
+}
+
+.gohann{
+    float : left;
+}
+
+.nulls{
+    margin: 40px 40px 200px 40px;
+}
+
+.times{
+    font-size: 23px;
+}
+
+.meals{
+    margin: 25px 40px 0px 40px;
+}
+
+.lol{
+    font-size: 100px;
+    font-family: 'Black Han Sans', sans-serif;
+}
+
+.img{
+    width: 400px;
+    margin: 20px 10px 30px 170px;
+}
+
+.img2{
+    width: 350px;
+    margin: 20px 10px 100px 190px;
+}

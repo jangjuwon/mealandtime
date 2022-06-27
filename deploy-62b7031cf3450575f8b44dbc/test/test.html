@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Api</title>
+</head>
+
+<body>
+  <script>
+    let today = new Date();
+    let year = today.getFullYear();
+    let month = today.getMonth() + 1;
+    let date = today.getDate();
+    const str1 = (year).toString();
+    const str2 = (month).toString();
+    const str3 = (date).toString();
+    const str4 = (str1 + "0" + str2 + str3).toString();
+  </script>
+  <p1>ss</p1>
+  <p></p>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <script>
+    $.ajax({
+      method: "GET",
+      url: "https://open.neis.go.kr/hub/mealServiceDietInfo",
+      data: { ATPT_OFCDC_SC_CODE: "M10", SD_SCHUL_CODE: "8000070", MLSV_YMD: str4 }
+    })
+      .done(function (msg) {
+        var cho = msg.getElementsByTagName("DDISH_NM")[0];
+        cho2 = cho.childNodes[0];
+        cho3 = cho2.nodeValue;
+        var jung = msg.getElementsByTagName("DDISH_NM")[1];
+        jung2 = jung.childNodes[0];
+        jung3 = jung2.nodeValue;        
+        var suk = msg.getElementsByTagName("DDISH_NM")[2];
+        suk2 = suk.childNodes[0];
+        suk3 = suk2.nodeValue;
+              
+        
+        console.log(cho3);
+        console.log(jung3);
+        console.log(suk3);
+        $("p").append("<strong>[조식]<br>" +cho3+ "<br><br></strong>");
+        $("p").append("<strong>[중식]<br>" +jung3+ "<br><br></strong>");
+        $("p").append("<strong>[석식]<br>" +suk3+ "<br><br></strong>");
+      });
+  </script>
+</body>
+
+</html>
